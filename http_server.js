@@ -1,9 +1,7 @@
 const http = require('http');
 const url = require('url');
 const server = http.createServer();
-const users = [{
-    name: 'jjj'
-}];
+const users = [];
 
 server.on('request', (request, response) => {
     const reqUrl = url.parse(request.url, true);
@@ -54,6 +52,7 @@ server.on('request', (request, response) => {
                             response.end('not supported content type');
                             break; 
                     }
+                    break;
                 default:
                     response.end('unsupported request method');
                     break;
